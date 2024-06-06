@@ -3,9 +3,9 @@
  main(int argc, char const *argv[])
 {
 
-printf("************************************");
-printf("* Bem-vindo ao Jogo de Adivinhação *");
-printf("************************************");
+printf("************************************\n");
+printf("* Bem-vindo ao Jogo de Adivinhação *\n");
+printf("************************************\n");
 
  return 0;
 }
