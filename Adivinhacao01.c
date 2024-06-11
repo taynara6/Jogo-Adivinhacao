@@ -5,13 +5,15 @@
 printf("************************************\n");
 printf("* Bem-vindo ao Jogo de Adivinhacao *\n");
 printf("************************************\n");
+for (int i = 1; i <=3; i++)
+{
 
 //Lendo o teclado
 int chute, numerosecreto, acertou;
 numerosecreto = 42;
 printf("Qual e seu chute?\n");
 scanf("%d", &chute);
-printf("Voce chutou o numero %d \n", chute);
+printf("Seu %do. chute foi %d\n", i, chute);
 acertou = chute == numerosecreto;
 //Controle de fluxo com if
 /*if (chute==numerosecreto){
@@ -34,12 +36,14 @@ else {
 if (acertou)
 {
    printf("Parabens! Voce acerto o numero secreto. \n");
+    break;
 }
 else
 {
+    printf("Acertou: %d\n", acertou);
     printf("Voce errou!\n");
     int maior;
-    maior = chute == numerosecreto;
+    maior = chute > numerosecreto;
     if (maior)
     {
        printf("Voce chutou um numero maior que o numero secreto.\n");
@@ -47,10 +51,10 @@ else
     else
     {
        printf("Voce chutou um numero menor que o numero secreto.\n");
-    }
-    
+    }   
 }
-
-
- return 0;
+}
+printf("Obrigado(a) por jogar! \n");
+printf("Fim de Jogo!!\n");
+return 0;
 }
