@@ -6,40 +6,39 @@
     printf("************************************\n");
     printf("* Bem-vindo ao Jogo de Adivinhacao *\n");
     printf("************************************\n");
-    for (int i = 1; i <=NUMERO_DE_TENTATIVAS; i++)
+    int acertou = 0;
+    int tentativas = 1;
+    int chute;
+    int numerosecreto = 42;
+    while (1)
     {
 
-
-        int chute, numerosecreto, acertou;
-        numerosecreto = 42;
-        printf("Qual e seu chute?\n");
+        printf("Qual e seu %do chute?\n", tentativas);
         scanf("%d", &chute);
          if (chute<0)
         {
             printf("Numero negativo nao e asseito, tente novamente!\n");
-            i--;
             continue;
         }
-        printf("Seu %do. chute foi %d\n", i, chute);
+        printf("Seu %do. chute foi %d\n", tentativas, chute);
         acertou = chute == numerosecreto;
-
         int maior = chute > numerosecreto;
-        int menor = chute < numerosecreto;
 
         if (acertou)
         {   
             printf("Parabens! Voce acerto o numero secreto. \n");
+            acertou = 1;
             break;
         }
-        if (maior)
+        else if (maior)
         {
-        printf("Voce chutou um numero maior que o numero secreto.\n");
+            printf("Voce chutou um numero maior que o numero secreto.\n");
         }
-        if(menor)
+        else
         {
-        printf("Voce chutou um numero menor que o numero secreto.\n");
+            printf("Voce chutou um numero menor que o numero secreto.\n");
         }   
-
+        tentativas++;
     }
     printf("Obrigado(a) por jogar! \n");
     printf("Fim de Jogo!!\n");
